@@ -2,43 +2,102 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS面向对象基础2 | lyyourc</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
+  <title>JS面向对象基础2 | 郭占铎个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="instanceof关键字判断构造函数的原型是不是在对象的原型链上
+1对象 instanceof 构造函数
+创建函数的三种方式函数声明123function 函数名(参数列表)&amp;#123;    //函数体&amp;#125;
+函数表达式123var 函数名 = function (参数列表)&amp;#123;    //函数体&amp;#125;
+Function1var 函数名 = new Function();">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS面向对象基础2">
+<meta property="og:url" content="http://yoursite.com/2017/02/05/JS面向对象基础2/index.html">
+<meta property="og:site_name" content="郭占铎个人博客">
+<meta property="og:description" content="instanceof关键字判断构造函数的原型是不是在对象的原型链上
+1对象 instanceof 构造函数
+创建函数的三种方式函数声明123function 函数名(参数列表)&amp;#123;    //函数体&amp;#125;
+函数表达式123var 函数名 = function (参数列表)&amp;#123;    //函数体&amp;#125;
+Function1var 函数名 = new Function();">
+<meta property="og:updated_time" content="2017-02-05T13:01:42.680Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS面向对象基础2">
+<meta name="twitter:description" content="instanceof关键字判断构造函数的原型是不是在对象的原型链上
+1对象 instanceof 构造函数
+创建函数的三种方式函数声明123function 函数名(参数列表)&amp;#123;    //函数体&amp;#125;
+函数表达式123var 函数名 = function (参数列表)&amp;#123;    //函数体&amp;#125;
+Function1var 函数名 = new Function();">
+  
+    <link rel="alternate" href="/atom.xml" title="郭占铎个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
 </head>
 
 <body>
-  <nav class="app-nav">
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭占铎个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JS面向对象基础2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/05/JS面向对象基础2/" class="article-date">
+  <time datetime="2017-02-05T13:01:31.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    
-      <a href="/.">home</a>
-    
+    <h1 class="article-title" itemprop="name">
+      JS面向对象基础2
+    </h1>
   
-    
-      <a href="/archives">archive</a>
-    
-  
-    
-      <a href="/atom.xml">rss</a>
-    
-  
-</nav>
 
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2017/02/05/JS面向对象基础2/">JS面向对象基础2</a>
-  </h1>
-
-  <section class="article-meta">
-    <p class="article-date">February 05 2017</p>
-  </section>
-
-  <section class="article-entry">
-    <h2 id="instanceof关键字"><a href="#instanceof关键字" class="headerlink" title="instanceof关键字"></a>instanceof关键字</h2><pre><code>判断构造函数的原型是不是在对象的原型链上
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="instanceof关键字"><a href="#instanceof关键字" class="headerlink" title="instanceof关键字"></a>instanceof关键字</h2><pre><code>判断构造函数的原型是不是在对象的原型链上
 </code></pre><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对象 <span class="keyword">instanceof</span> 构造函数</div></pre></td></tr></table></figure>
 <h2 id="创建函数的三种方式"><a href="#创建函数的三种方式" class="headerlink" title="创建函数的三种方式"></a>创建函数的三种方式</h2><h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">参数列表</span>)</span>&#123;</div><div class="line">    <span class="comment">//函数体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="函数表达式"><a href="#函数表达式" class="headerlink" title="函数表达式"></a>函数表达式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span> (<span class="params">参数列表</span>)</span>&#123;</div><div class="line">    <span class="comment">//函数体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -87,78 +146,101 @@
 <li>实例成员： 通过实例去访问的成员就是实例成员</li>
 </ul>
 
-  </section>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/05/JS面向对象基础2/" data-id="ciysogytb0000n47xkli1sli4" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/05/面向对象基础1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">面向对象基础</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="http://7xrcp8.com1.z0.glb.clouddn.com/avatar.png" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> lyyourc </p>
-      <p class="subtitle"> You Are The JavaScript In My HTML </p>
-    <div>
-  </section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
 
-  <section class="share-btns">
-    <!-- <p> share it if you like it~ </p> -->
-    <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text= id="instanceof关键字">"
->
-  Tweet
-</a>
+  
+    
 
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
-
-  </section>
-</div>
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
 
 
   
     
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/05/JS面向对象基础2/">JS面向对象基础2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/面向对象基础1/">面向对象基础</a>
+          </li>
+        
+      </ul>
+    </div>
   </div>
-</section>
-
-<script>
-  var disqus_shortname = 'drakeleung';
-  
-  var disqus_url = 'http://yoursite.com/2017/02/05/JS面向对象基础2/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
   
-</main>
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
 </body>
 </html>
