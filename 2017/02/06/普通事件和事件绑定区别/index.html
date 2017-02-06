@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>普通事件和事件绑定区别.md | 郭占铎个人博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="普通事件和事件绑定的区别1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;  &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;  &amp;lt;/head&amp;gt;  &amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="普通事件和事件绑定区别.md">
+<meta property="og:url" content="http://yoursite.com/2017/02/06/普通事件和事件绑定区别/index.html">
+<meta property="og:site_name" content="郭占铎个人博客">
+<meta property="og:description" content="普通事件和事件绑定的区别1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;  &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;  &amp;lt;/head&amp;gt;  &amp;l">
+<meta property="og:updated_time" content="2017-02-06T07:24:57.997Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="普通事件和事件绑定区别.md">
+<meta name="twitter:description" content="普通事件和事件绑定的区别1234567891011121314151617181920212223242526272829&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;  &amp;lt;head&amp;gt;    &amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;    &amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;  &amp;lt;/head&amp;gt;  &amp;l">
+  
+    <link rel="alternate" href="/atom.xml" title="郭占铎个人博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭占铎个人博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-普通事件和事件绑定区别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/06/普通事件和事件绑定区别/" class="article-date">
+  <time datetime="2017-02-06T07:23:43.000Z" itemprop="datePublished">2017-02-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      普通事件和事件绑定区别.md
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="普通事件和事件绑定的区别"><a href="#普通事件和事件绑定的区别" class="headerlink" title="普通事件和事件绑定的区别"></a>普通事件和事件绑定的区别</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">    &lt;title&gt;&lt;/title&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;button id=&quot;btn1&quot;&gt;普通事件&lt;/button&gt;</div><div class="line">    &lt;button id=&quot;btn2&quot;&gt;事件绑定&lt;/button&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">  var btn1=document.getElementById(&apos;btn1&apos;);</div><div class="line">  var btn2=document.getElementById(&apos;btn2&apos;);</div><div class="line">  </div><div class="line">  btn1.onclick=function()&#123;</div><div class="line">    alert(&apos;1&apos;);//不执行</div><div class="line">  &#125;;</div><div class="line">  btn1.onclick=function()&#123;</div><div class="line">    alert(&apos;2&apos;);//执行</div><div class="line">  &#125;;</div><div class="line">  btn2.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">    alert(&apos;1&apos;);//执行</div><div class="line">  &#125;,false);</div><div class="line">  btn2.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">    alert(&apos;2&apos;);//执行</div><div class="line">  &#125;,false);</div><div class="line">  //注意这里没有兼容低版本的IE</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="总结-普通事件中的onclick是DOM0级事件只支持单个事件-会被其他的onclick事件覆盖-而事件绑定中的addEventListener是DOM2级事件可以添加多个事件-前面的事件不会被覆盖-孰优孰略-聪明的你自己一定肯定知道了吧"><a href="#总结-普通事件中的onclick是DOM0级事件只支持单个事件-会被其他的onclick事件覆盖-而事件绑定中的addEventListener是DOM2级事件可以添加多个事件-前面的事件不会被覆盖-孰优孰略-聪明的你自己一定肯定知道了吧" class="headerlink" title="总结:普通事件中的onclick是DOM0级事件只支持单个事件,会被其他的onclick事件覆盖,而事件绑定中的addEventListener是DOM2级事件可以添加多个事件,前面的事件不会被覆盖,孰优孰略,聪明的你自己一定肯定知道了吧!"></a>总结:普通事件中的onclick是DOM0级事件只支持单个事件,会被其他的onclick事件覆盖,而事件绑定中的addEventListener是DOM2级事件可以添加多个事件,前面的事件不会被覆盖,孰优孰略,聪明的你自己一定肯定知道了吧!</h3>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/02/06/普通事件和事件绑定区别/" data-id="ciytrwj730001ak7xz1f4yzjk" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/02/05/JS面向对象基础2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">JS面向对象基础2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/02/06/普通事件和事件绑定区别/">普通事件和事件绑定区别.md</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/JS面向对象基础2/">JS面向对象基础2</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/05/面向对象基础1/">面向对象基础</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
